@@ -1,0 +1,164 @@
+/* ═══════════════════════════════════════════════════
+   PASTORS PAGE
+   ═══════════════════════════════════════════════════ */
+
+.pastors-hero {
+  background: linear-gradient(160deg, var(--aba-cream) 0%, #e2d8c4 100%);
+  padding: 110px 8% 80px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  position: relative; overflow: hidden;
+}
+.pastors-hero::before {
+  content: "";
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-image: radial-gradient(rgba(74,109,85,0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+.category-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--aba-green);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+
+.pastors-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.4rem;
+  color: var(--aba-dark);
+  margin-bottom: 18px;
+  position: relative; z-index: 1;
+}
+.pastors-hero .intro {
+  font-size: 1.1rem; color: #555;
+  max-width: 680px; margin-bottom: 40px;
+  position: relative; z-index: 1; line-height: 1.7;
+}
+
+/* ── Search ──────────────────────────────────────── */
+.search-wrapper { max-width: 520px; }
+.aba-search-form {
+  background: var(--aba-white);
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: var(--radius-pill, 100px);
+  padding: 6px 6px 6px 20px;
+  display: flex; align-items: center;
+  max-width: 400px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.aba-search-form:focus-within {
+  max-width: 100%;
+  border-color: var(--aba-green);
+  box-shadow: 0 0 0 3px rgba(74,109,85,0.12);
+}
+#aba-search-input {
+  border: none; background: none;
+  padding: 10px 6px; flex-grow: 1;
+  outline: none; font-size: 0.95rem;
+}
+#aba-search-input::placeholder { color: #bbb; font-style: italic; }
+.search-submit {
+  background: var(--aba-green); border: none; color: white;
+  cursor: pointer; padding: 10px 14px;
+  border-radius: var(--radius-pill, 100px);
+  transition: all 0.22s ease; display: flex; align-items: center;
+}
+.search-submit:hover { background: var(--aba-dark); }
+
+/* ── Grid ────────────────────────────────────────── */
+.pastors-grid-container {
+  padding: 80px 8%;
+  background: var(--aba-white);
+}
+
+.pastor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.pastor-card {
+  background: var(--aba-white);
+  border: 1px solid rgba(74,109,85,0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.28s ease;
+  display: flex; flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.pastor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.1);
+  border-color: rgba(74,109,85,0.3);
+}
+
+.image-container {
+  width: 100%; height: 240px;
+  overflow: hidden; background: #f5f5f5;
+}
+.image-container img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.pastor-card:hover .image-container img { transform: scale(1.05); }
+
+.aba-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--aba-dark) 0%, var(--aba-green) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--aba-cream); font-size: 4rem; font-weight: 700;
+}
+
+.card-content {
+  padding: 24px;
+  display: flex; flex-direction: column; flex-grow: 1;
+}
+
+.role-tag {
+  font-size: 0.66rem; color: var(--aba-green);
+  font-weight: 800; letter-spacing: 1.8px;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+
+.pastor-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  margin-bottom: 10px; color: var(--aba-dark);
+}
+
+.bio-text {
+  font-size: 0.9rem; color: var(--text-muted, #6b7280);
+  line-height: 1.65; margin-bottom: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.view-btn {
+  margin-top: auto;
+  text-decoration: none; color: var(--aba-green);
+  font-weight: 700; font-size: 0.8rem;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  border-bottom: 2px solid var(--aba-green); padding-bottom: 2px;
+  align-self: flex-start;
+  transition: all 0.22s ease;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.view-btn:hover {
+  color: var(--aba-accent);
+  border-bottom-color: var(--aba-accent);
+  gap: 8px;
+}
+
+@media (max-width: 1200px) { .pastor-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .pastor-grid { grid-template-columns: 1fr; } }

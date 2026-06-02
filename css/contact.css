@@ -1,0 +1,130 @@
+/* ═══════════════════════════════════════════════════
+   CONTACT PAGE
+   ═══════════════════════════════════════════════════ */
+
+.contact-hero {
+  background: linear-gradient(160deg, var(--aba-cream) 0%, #e2d8c4 100%);
+  padding: 110px 8% 80px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  position: relative; overflow: hidden;
+}
+.contact-hero::before {
+  content: "";
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-image: radial-gradient(rgba(74,109,85,0.07) 1px, transparent 1px);
+  background-size: 18px 18px; pointer-events: none;
+}
+
+.category-eyebrow {
+  font-size: 0.7rem; font-weight: 800; color: var(--aba-green);
+  letter-spacing: 2.5px; text-transform: uppercase;
+  display: block; margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+
+.contact-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.4rem; color: var(--aba-dark);
+  margin-bottom: 18px; position: relative; z-index: 1;
+}
+.contact-hero .intro {
+  font-size: 1.1rem; color: #555;
+  max-width: 640px; line-height: 1.7;
+  position: relative; z-index: 1;
+}
+
+/* ── Form Section ────────────────────────────────── */
+.contact-form-section {
+  padding: 90px 8%;
+  background: var(--aba-white);
+  display: flex; justify-content: center;
+}
+
+.contact-container {
+  width: 100%; max-width: 680px;
+}
+
+/* ── Form ────────────────────────────────────────── */
+.aba-form .form-group { margin-bottom: 24px; }
+
+.aba-form label {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700; font-size: 1rem;
+  color: var(--aba-dark); margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+
+.aba-form input[type="text"],
+.aba-form input[type="email"],
+.aba-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: var(--surface, #fdfaf5);
+  color: var(--aba-dark);
+  transition: all 0.25s ease;
+  outline: none;
+}
+.aba-form input:focus, .aba-form textarea:focus {
+  background: var(--aba-white);
+  border-color: var(--aba-green);
+  box-shadow: 0 0 0 3px rgba(74,109,85,0.1);
+}
+
+.file-input { font-size: 0.9rem; color: #666; }
+.file-hint { display: block; font-size: 0.75rem; color: #aaa; margin-top: 5px; }
+
+/* ── Submit Button ───────────────────────────────── */
+.aba-btn-submit {
+  background: var(--aba-dark);
+  color: var(--aba-white);
+  padding: 16px 40px;
+  border: none;
+  border-radius: var(--radius-pill, 100px);
+  font-weight: 700; font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.28s ease;
+  min-width: 200px;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  position: relative; overflow: hidden;
+}
+.aba-btn-submit::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.aba-btn-submit:hover {
+  background: var(--aba-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74,109,85,0.3);
+}
+.aba-btn-submit:hover::after { opacity: 1; }
+
+/* ── Status Messages ─────────────────────────────── */
+.status-msg {
+  padding: 14px 20px;
+  border-radius: 10px;
+  margin-bottom: 28px;
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.95rem;
+}
+.success-msg {
+  background: #edf7ee; color: #2d5a2d;
+  border-left: 4px solid #4caf50;
+}
+.error-msg {
+  background: #fdf2f2; color: #9b2c2c;
+  border-left: 4px solid var(--aba-accent);
+}
+
+@media (max-width: 768px) {
+  .contact-hero h1 { font-size: 2.5rem; }
+  .contact-form-section { padding: 50px 5%; }
+}

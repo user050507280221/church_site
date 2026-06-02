@@ -1,0 +1,149 @@
+/* ═══════════════════════════════════════════════════
+   PASTOR VIEW PAGE
+   ═══════════════════════════════════════════════════ */
+
+.pastor-view-hero {
+  background: linear-gradient(160deg, var(--aba-cream) 0%, #ddd3ba 100%);
+  padding: 70px 8% 60px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.aba-back-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  text-decoration: none; color: var(--aba-green);
+  font-weight: 700; font-size: 0.8rem;
+  margin-bottom: 32px; text-transform: uppercase; letter-spacing: 1px;
+  transition: color 0.22s;
+}
+.aba-back-btn:hover { color: var(--aba-accent); }
+
+.profile-header-flex {
+  display: flex; align-items: center; gap: 40px;
+}
+
+.profile-image-wrapper {
+  width: 175px; height: 175px;
+  flex-shrink: 0; position: relative;
+}
+
+.profile-image-wrapper img, .profile-image-placeholder {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,0.9);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  object-fit: cover;
+}
+
+.profile-image-placeholder {
+  background: linear-gradient(135deg, var(--aba-dark) 0%, var(--aba-green) 100%);
+  color: var(--aba-cream); display: flex;
+  align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem; font-weight: 700;
+}
+
+.profile-title-wrapper h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; color: var(--aba-dark);
+  margin: 5px 0; line-height: 1.15;
+}
+
+.category-eyebrow {
+  font-size: 0.7rem; font-weight: 800; color: var(--aba-green);
+  letter-spacing: 2.5px; text-transform: uppercase;
+}
+
+.pastor-of {
+  font-size: 1.05rem; color: #666; margin: 0;
+}
+
+/* ── Body ────────────────────────────────────────── */
+.pastor-details-section {
+  padding: 68px 8%;
+  background: var(--aba-white);
+}
+.aba-container { max-width: 1100px; margin: 0 auto; }
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 52px;
+}
+
+.section-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; color: var(--aba-green);
+  border-bottom: 2px solid rgba(74,109,85,0.15);
+  padding-bottom: 8px; margin-bottom: 20px;
+  text-transform: uppercase; letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+.bio-content p {
+  font-size: 1.05rem; line-height: 1.75; color: #333; margin-bottom: 22px;
+}
+
+.contact-chips { display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
+.chip {
+  padding: 8px 16px; border-radius: var(--radius-pill, 100px);
+  font-size: 0.88rem; text-decoration: none;
+  background: var(--surface, #fdfaf5);
+  border: 1.5px solid rgba(0,0,0,0.1);
+  color: var(--aba-dark);
+  transition: all 0.22s ease;
+}
+.chip:hover { border-color: var(--aba-green); color: var(--aba-green); }
+
+.social-links-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.social-btn {
+  padding: 8px 16px; border-radius: 8px;
+  color: white; text-decoration: none;
+  font-weight: 700; font-size: 0.78rem;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.social-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.fb { background: #3b5998; }
+.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.web { background: var(--aba-dark); }
+
+/* Sidebar */
+.aba-btn-primary {
+  display: block; background: var(--aba-dark);
+  color: white; text-align: center;
+  padding: 13px; text-decoration: none;
+  font-weight: 700; border-radius: 10px;
+  margin-bottom: 28px; font-size: 0.88rem;
+  text-transform: uppercase; letter-spacing: 1px;
+  transition: all 0.25s ease;
+}
+.aba-btn-primary:hover { background: var(--aba-green); transform: translateY(-2px); }
+
+.sermon-row {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.sermon-info p {
+  font-weight: 700; margin: 0; font-size: 0.92rem;
+}
+.sermon-date {
+  font-size: 0.64rem; color: var(--aba-green);
+  font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+}
+
+.aba-download-link {
+  color: var(--aba-accent); text-decoration: none;
+  font-weight: 700; font-size: 0.78rem;
+  border: 1.5px solid var(--aba-accent);
+  padding: 5px 11px; border-radius: 6px;
+  transition: all 0.22s ease;
+}
+.aba-download-link:hover { background: var(--aba-accent); color: white; }
+
+@media (max-width: 992px) {
+  .details-grid { grid-template-columns: 1fr; }
+  .profile-header-flex { flex-direction: column; text-align: center; }
+  .profile-title-wrapper h1 { font-size: 2.2rem; }
+}

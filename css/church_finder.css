@@ -1,0 +1,199 @@
+/* ═══════════════════════════════════════════════════
+   CHURCH FINDER PAGE
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  --aba-dark: #1a242f;
+  --aba-cream: #f4eee1;
+  --aba-accent: #ee6352;
+  --aba-green: #4a6d55;
+  --aba-white: #ffffff;
+}
+
+.sermons-hero, .church-hero {
+  background: linear-gradient(160deg, var(--aba-cream) 0%, #e2d8c4 100%);
+  padding: 110px 8% 80px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  position: relative;
+  overflow: hidden;
+}
+.sermons-hero::before, .church-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: radial-gradient(rgba(74,109,85,0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+.sermons-hero h1, .church-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.4rem;
+  color: var(--aba-dark);
+  margin-bottom: 18px;
+  position: relative; z-index: 1;
+}
+.sermons-hero .intro, .church-hero .intro {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 680px;
+  margin-bottom: 40px;
+  position: relative; z-index: 1;
+}
+
+/* ── Region Navigation ───────────────────────────── */
+.region-nav {
+  margin: 28px 0 0;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.region-link {
+  text-decoration: none;
+  color: var(--aba-dark);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill, 100px);
+  border: 1.5px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.6);
+  transition: all 0.22s ease;
+}
+.region-link:hover {
+  color: var(--aba-green);
+  border-color: var(--aba-green);
+  background: rgba(74,109,85,0.07);
+}
+.region-link.active {
+  color: var(--aba-white);
+  background: var(--aba-green);
+  border-color: var(--aba-green);
+}
+
+/* ── Search ──────────────────────────────────────── */
+.search-wrapper { max-width: 520px; }
+.aba-search-form {
+  background: var(--aba-white);
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: var(--radius-pill, 100px);
+  padding: 6px 6px 6px 20px;
+  display: flex;
+  align-items: center;
+  max-width: 420px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.aba-search-form:focus-within {
+  max-width: 100%;
+  border-color: var(--aba-green);
+  box-shadow: 0 0 0 3px rgba(74,109,85,0.12);
+}
+#aba-search-input {
+  border: none; background: none;
+  padding: 10px 6px; flex-grow: 1;
+  outline: none; font-size: 0.95rem; color: var(--aba-dark);
+}
+#aba-search-input::placeholder { color: #bbb; font-style: italic; }
+.search-submit {
+  background: var(--aba-green); border: none; color: white;
+  cursor: pointer; padding: 10px 14px;
+  border-radius: var(--radius-pill, 100px);
+  transition: all 0.22s ease; display: flex; align-items: center;
+}
+.search-submit:hover { background: var(--aba-dark); }
+
+/* ── Church Grid ─────────────────────────────────── */
+.church-grid-container {
+  padding: 80px 8%;
+  background: var(--aba-white);
+}
+
+.church-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.church-card {
+  background: var(--aba-white);
+  border: 1px solid rgba(74,109,85,0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.church-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  border-color: rgba(74,109,85,0.3);
+}
+
+.image-container {
+  width: 100%; height: 180px; overflow: hidden; background: #f5f5f5;
+}
+.image-container img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.church-card:hover .image-container img { transform: scale(1.06); }
+
+.aba-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--aba-cream) 0%, #e0d4bc 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--aba-green); opacity: 0.5;
+}
+
+.card-content {
+  padding: 22px;
+  display: flex; flex-direction: column; flex-grow: 1;
+}
+
+.region-tag {
+  font-size: 0.66rem; color: var(--aba-green);
+  font-weight: 800; letter-spacing: 1.8px;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+
+.church-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: var(--aba-dark);
+  line-height: 1.2;
+}
+
+.location-text, .province-text {
+  font-size: 0.88rem; color: #777;
+  margin-bottom: 5px; line-height: 1.5;
+  display: flex; align-items: center; gap: 5px;
+}
+
+.view-btn {
+  margin-top: auto;
+  padding-top: 14px;
+  text-decoration: none;
+  color: var(--aba-green);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 2px solid var(--aba-green);
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition: all 0.22s ease;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.view-btn:hover {
+  color: var(--aba-accent);
+  border-bottom-color: var(--aba-accent);
+  gap: 8px;
+}
+
+@media (max-width: 1100px) { .church-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .church-grid { grid-template-columns: 1fr; } }

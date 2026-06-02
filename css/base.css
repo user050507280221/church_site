@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --aba-dark:   #1a242f;
+  --aba-cream:  #f4eee1;
+  --aba-accent: #ee6352;
+  --aba-green:  #4a6d55;
+  --aba-gold:   #D6A229;
+  --aba-white:  #ffffff;
+  --aba-navy:   #0B1F3F;
+
+  /* Refined palette additions */
+  --surface:       #fdfaf5;
+  --surface-alt:   #f7f3ec;
+  --border-soft:   rgba(74,109,85,0.15);
+  --text-muted:    #6b7280;
+  --shadow-sm:     0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:     0 8px 28px rgba(0,0,0,0.10);
+  --shadow-lg:     0 20px 60px rgba(0,0,0,0.14);
+  --radius-card:   16px;
+  --radius-pill:   100px;
+  --transition:    all 0.28s cubic-bezier(0.25,1,0.5,1);
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--surface);
+  color: var(--aba-dark);
+  line-height: 1.6;
+}
+
+main { flex: 1; }
+
+/* ── Typography ───────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.15;
+  color: var(--aba-dark);
+}
+
+h1 { font-size: 3.6rem; font-weight: 700; }
+h2 { font-size: 2.4rem; font-weight: 600; margin-bottom: 30px; }
+h3 { font-size: 1.5rem; font-weight: 600; }
+
+p { font-size: 1rem; line-height: 1.75; color: #3d4553; }
+
+/* ── Scroll Reveal ───────────────────────────────── */
+.fade-section {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.fade-section .stagger-child {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.fade-section.visible .stagger-child:nth-child(1) { opacity:1; transform:none; transition-delay:0.1s; }
+.fade-section.visible .stagger-child:nth-child(2) { opacity:1; transform:none; transition-delay:0.22s; }
+.fade-section.visible .stagger-child:nth-child(3) { opacity:1; transform:none; transition-delay:0.34s; }
+.fade-section.visible .stagger-child:nth-child(4) { opacity:1; transform:none; transition-delay:0.46s; }
+
+/* ── Animations ──────────────────────────────────── */
+@keyframes fadeSlideRight {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-120%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}

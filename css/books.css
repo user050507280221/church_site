@@ -1,0 +1,67 @@
+/* ═══════════════════════════════════════════════════
+   BOOKS PAGE
+   ═══════════════════════════════════════════════════ */
+
+.books-hero {
+  background: linear-gradient(160deg, var(--aba-cream) 0%, #e2d8c4 100%);
+  padding: 110px 8% 80px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  position: relative; overflow: hidden;
+}
+.books-hero::before {
+  content: "";
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-image: radial-gradient(rgba(74,109,85,0.07) 1px, transparent 1px);
+  background-size: 18px 18px; pointer-events: none;
+}
+
+.category-eyebrow {
+  font-size: 0.7rem; font-weight: 800; color: var(--aba-green);
+  letter-spacing: 2.5px; text-transform: uppercase;
+  display: block; margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+
+.books-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.4rem; color: var(--aba-dark);
+  margin-bottom: 18px;
+  position: relative; z-index: 1;
+}
+.books-hero .intro {
+  font-size: 1.1rem; color: #555; max-width: 680px;
+  line-height: 1.7; position: relative; z-index: 1;
+}
+
+.books-content {
+  padding: 90px 8%;
+  background: var(--aba-white);
+  min-height: 400px;
+  display: flex; justify-content: center; align-items: center;
+}
+
+.container { width: 100%; max-width: 1200px; }
+
+.no-books-box {
+  text-align: center; padding: 60px 40px;
+  border: 2px dashed rgba(0,0,0,0.1);
+  border-radius: 16px; color: #aaa;
+}
+.no-books-box svg { color: #ddd; margin-bottom: 20px; }
+.no-books-box p { font-size: 1.1rem; margin-bottom: 24px; color: #999; }
+
+.back-link {
+  text-decoration: none; color: var(--aba-dark);
+  font-weight: 700; font-size: 0.85rem;
+  text-transform: uppercase; letter-spacing: 1px;
+  border-bottom: 2px solid var(--aba-green); padding-bottom: 2px;
+  transition: all 0.22s ease;
+}
+.back-link:hover { color: var(--aba-green); border-bottom-color: var(--aba-accent); }
+
+@media (max-width: 768px) {
+  .books-hero { padding: 70px 5% 50px; }
+  .books-hero h1 { font-size: 2.5rem; }
+  .books-content { padding: 50px 5%; }
+}

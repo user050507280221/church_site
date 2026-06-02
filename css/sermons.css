@@ -1,0 +1,175 @@
+/* ═══════════════════════════════════════════════════
+   SERMONS PAGE
+   ═══════════════════════════════════════════════════ */
+
+.sermons-hero, .church-hero {
+  background: linear-gradient(160deg, var(--aba-cream) 0%, #e2d8c4 100%);
+  padding: 110px 8% 80px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  position: relative;
+  overflow: hidden;
+}
+
+.sermons-hero::before, .church-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: radial-gradient(rgba(74,109,85,0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+.sermons-hero h1, .church-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.4rem;
+  color: var(--aba-dark);
+  margin-bottom: 18px;
+  position: relative; z-index: 1;
+}
+
+.sermons-hero .intro, .church-hero .intro {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 680px;
+  margin-bottom: 40px;
+  position: relative; z-index: 1;
+  line-height: 1.7;
+}
+
+/* ── Search ──────────────────────────────────────── */
+.search-wrapper { max-width: 520px; }
+
+.aba-search-form {
+  background: var(--aba-white);
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: var(--radius-pill);
+  padding: 6px 6px 6px 20px;
+  display: flex;
+  align-items: center;
+  max-width: 420px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.aba-search-form:focus-within {
+  max-width: 100%;
+  border-color: var(--aba-green);
+  box-shadow: 0 0 0 3px rgba(74,109,85,0.12), var(--shadow-sm);
+}
+
+#aba-search-input {
+  border: none; background: none;
+  padding: 10px 6px;
+  flex-grow: 1;
+  outline: none;
+  font-size: 0.95rem;
+  color: var(--aba-dark);
+}
+#aba-search-input::placeholder { color: #bbb; font-style: italic; }
+
+.search-submit {
+  background: var(--aba-green);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+}
+.search-submit:hover { background: var(--aba-dark); transform: scale(1.06); }
+
+/* ── Sermon Cards ────────────────────────────────── */
+.sermons-grid-container {
+  padding: 80px 8%;
+  background: var(--aba-white);
+}
+
+.carousel-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+
+.carousel-item {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-top: 3px solid var(--aba-green);
+  border-radius: var(--radius-card);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.carousel-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--aba-accent);
+}
+
+.category-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--aba-green);
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.category-label::before {
+  content: '';
+  display: inline-block;
+  width: 16px; height: 2px;
+  background: var(--aba-green);
+  border-radius: 2px;
+}
+
+.carousel-item h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: var(--aba-dark);
+  line-height: 1.25;
+}
+
+.carousel-item p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.read-more {
+  text-decoration: none;
+  color: var(--aba-dark);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 2px solid var(--aba-green);
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.read-more:hover {
+  color: var(--aba-green);
+  border-bottom-color: var(--aba-accent);
+  gap: 8px;
+}
+
+.no-result-box {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 40px;
+  border: 2px dashed rgba(0,0,0,0.1);
+  border-radius: var(--radius-card);
+  color: var(--text-muted);
+}
